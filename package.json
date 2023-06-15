@@ -15,8 +15,12 @@
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.5",
     "next": "13.4.5",
+    "next-auth": "^4.22.1",
+    "next-optimized-images": "^2.6.2",
+    "nodemailer": "^6.9.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sass": "^1.63.4",
     "typescript": "5.1.3"
   }
 }
