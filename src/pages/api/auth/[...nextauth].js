@@ -25,7 +25,7 @@ export const authOptions = {
     //   from: 'NextAuth.js <no-reply@example.com>'
     // }),
   ],
-//   secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async session({ session, token }) {
       return session;

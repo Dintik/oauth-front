@@ -2,13 +2,7 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import styles from './page.module.css'
 
 export default function Home() {
-  const { data: session } = useSession()
-  if(session) {
-    return <>
-      Signed in as {session.user?.email} <br/>
-      <button onClick={() => signOut()}>Sign out</button>
-    </>
-  }
+  const { data: session } = useSession();
 
   return (
     <main className={styles.main}>
@@ -16,8 +10,18 @@ export default function Home() {
         <p>
           Get started by OAuth
         </p>
-        <p>Not signed in <br/></p>
-        <button onClick={() => signIn()}>Sign in</button>
+
+        {session ?
+          <>
+             <p>Signed in as {session.user?.email} <br/></p>
+            <button onClick={() => signOut()}>Sign out</button>
+          </>
+        :
+          <>
+            <p>Not signed in <br/></p>
+            <button onClick={() => signIn()}>Sign in</button>
+          </>
+        }
       </div>
     </main>
   )
