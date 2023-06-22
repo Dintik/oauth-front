@@ -49,13 +49,13 @@ export default function Home() {
     };
   }, []);
 
-  useEffect(() => {
-    const handleSendMessage = (data: any) => {
-      window.parent.postMessage({data, target:"oauth-app"}, "*");
-    };
+  // useEffect(() => {
+  //   const handleSendMessage = (data: any) => {
+  //     window.parent.postMessage({data, target:"oauth-app"}, "*");
+  //   };
 
-    handleSendMessage(session?.user);
-  }, [session]);
+  //   handleSendMessage(session?.user);
+  // }, [session]);
 
   return (
     <main
@@ -75,7 +75,7 @@ export default function Home() {
           <>
             <p>Not signed in <br/></p>
             {embedded ?
-              <a href={`${currentPage}?parentUrl=http://localhost:3001`} target="_parent">
+              <a href={`${currentPage}?parentUrl=https://iframe-app-ivory.vercel.app`} target="_parent">
                 Go to login
               </a>
             :
