@@ -49,13 +49,13 @@ export default function Home() {
     };
   }, []);
 
-  // useEffect(() => {
-  //   const handleSendMessage = (data: any) => {
-  //     window.parent.postMessage({data, target:"oauth-app"}, "*");
-  //   };
+  useEffect(() => {
+    const handleSendMessage = (data: any) => {
+      window.parent.postMessage({data, target:"oauth-app"}, "*");
+    };
 
-  //   handleSendMessage(session?.user);
-  // }, [session]);
+    handleSendMessage(session?.user);
+  }, [session]);
 
   return (
     <main
